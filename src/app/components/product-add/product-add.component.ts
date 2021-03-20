@@ -32,11 +32,10 @@ export class ProductAddComponent implements OnInit {
       this.productService.add(productModel).subscribe(response=>{
         console.log(response)
         this.toastrService.success(response.message,"Başarılı")
-      }),responseError=>{
+      },responseError=>{
         console.log(responseError.error);
         this.toastrService.error(responseError.error)
-        )
-      }
+      })
     }else{
       this.toastrService.error("Formunuz eksik","Dikkat")
     }
